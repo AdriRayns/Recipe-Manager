@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Recipe Manager",
+        "description": "Configura l'integrazione Recipe Manager."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "È consentita una sola istanza di Recipe Manager."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni di Recipe Manager",
+        "data": {
+          "default_servings": "Porzioni predefinite",
+          "download_images": "Scarica automaticamente le immagini delle ricette"
+        },
+        "data_description": {
+          "default_servings": "Numero predefinito di porzioni durante il ridimensionamento di una ricetta.",
+          "download_images": "Scarica e salva localmente le immagini delle ricette quando una ricetta viene salvata."
+        }
+      }
+    }
+  }
+}
