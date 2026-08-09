@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Recipe Manager",
+        "description": "Configurar a integração do Recipe Manager."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Apenas uma única instância do Recipe Manager é permitida."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opções do Recipe Manager",
+        "data": {
+          "default_servings": "Porções padrão",
+          "download_images": "Transferir automaticamente as imagens das receitas"
+        },
+        "data_description": {
+          "default_servings": "Número padrão de porções ao ajustar uma receita.",
+          "download_images": "Transferir e guardar as imagens das receitas localmente ao guardar uma receita."
+        }
+      }
+    }
+  }
+}

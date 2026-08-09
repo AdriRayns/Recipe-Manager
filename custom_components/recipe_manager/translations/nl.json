@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Recipe Manager",
+        "description": "De Recipe Manager-integratie instellen."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Er is slechts één exemplaar van Recipe Manager toegestaan."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Recipe Manager-opties",
+        "data": {
+          "default_servings": "Standaardaantal porties",
+          "download_images": "Receptafbeeldingen automatisch downloaden"
+        },
+        "data_description": {
+          "default_servings": "Standaardaantal porties bij het schalen van een recept.",
+          "download_images": "Receptafbeeldingen lokaal downloaden en opslaan wanneer een recept wordt opgeslagen."
+        }
+      }
+    }
+  }
+}
