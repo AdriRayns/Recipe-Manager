@@ -1144,12 +1144,12 @@ import{c as e,i as t,b as i,m as r,s as a,a as n,A as s,E as o}from"./chunks/run
         </div>
       </div>
     `}_renderEditPanel(){const e=this._editData;return i`
-      <div class="edit-overlay" @click=${e=>{e.target===e.currentTarget&&this._cancelEdit()}}>
-        <div class="edit-panel">
-          <div class="edit-header">
-            <span>${r("Edit Recipe")}</span>
-            <button class="icon-btn" @click=${this._cancelEdit}><ha-icon icon="mdi:close"></ha-icon></button>
-          </div>
+      <ha-adaptive-dialog
+        .open=${!0}
+        .headerTitle=${r("Edit Recipe")}
+        width="large"
+        @closed=${this._cancelEdit}
+      >
           <div class="edit-body">
 
             ${this._renderField(r("Name"),"name","text")}
@@ -1364,7 +1364,7 @@ import{c as e,i as t,b as i,m as r,s as a,a as n,A as s,E as o}from"./chunks/run
             </div>
 
           </div>
-          <div class="edit-footer">
+          <div slot="footer" class="edit-footer">
             <button class="action-btn danger-outline" @click=${this._handleDeleteRecipe}
               title="${this._confirmDelete?r("Click again to confirm delete"):r("Delete recipe")}">
               <ha-icon icon="${this._confirmDelete?"mdi:alert":"mdi:trash-can-outline"}"></ha-icon>
@@ -1375,8 +1375,7 @@ import{c as e,i as t,b as i,m as r,s as a,a as n,A as s,E as o}from"./chunks/run
               <button class="action-btn primary" @click=${this._saveEdit}>${r("Save")}</button>
             </div>
           </div>
-        </div>
-      </div>
+      </ha-adaptive-dialog>
     `}_renderField(e,t,r){const a=this._editData[t]??"";return"textarea"===r?i`
         <div class="edit-field">
           <label>${e}</label>
@@ -2092,38 +2091,14 @@ import{c as e,i as t,b as i,m as r,s as a,a as n,A as s,E as o}from"./chunks/run
       display: flex; align-items: center; justify-content: center; padding: 0;
     }
 
-    /* Edit overlay */
-    .edit-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      display: flex;
-      align-items: flex-end;
-      z-index: 10;
-    }
-    .edit-panel {
-      background: var(--rm-bg-surface, #1c1c1e);
-      border-radius: var(--rm-radius, 12px) var(--rm-radius, 12px) 0 0;
-      width: 100%;
-      max-height: 82vh;
-      display: flex;
-      flex-direction: column;
-    }
-    .edit-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--rm-border, rgba(255,255,255,0.08));
-      font-weight: 600;
-      font-size: 16px;
-      color: var(--rm-text, #e5e5ea);
-      flex-shrink: 0;
+    /* Edit dialog (ha-adaptive-dialog) */
+    ha-adaptive-dialog {
+      --ha-dialog-surface-background: var(--rm-bg-surface, #1c1c1e);
+      --ha-bottom-sheet-surface-background: var(--rm-bg-surface, #1c1c1e);
+      --dialog-content-padding: 16px;
+      --ha-dialog-border-radius: var(--rm-radius, 12px);
     }
     .edit-body {
-      flex: 1;
-      overflow-y: auto;
-      padding: 16px;
       display: flex;
       flex-direction: column;
       gap: 12px;
