@@ -25,6 +25,27 @@ _LOGGER = logging.getLogger(__name__)
 DATA_STORAGE = f"{DOMAIN}_storage"
 DATA_GLOBAL_TIMER_STORAGE = f"{DOMAIN}_global_timer_storage"
 
+import json as _json
+import os as _os
+
+
+def _read_manifest_version() -> str:
+    """Read the integration version from manifest.json.
+
+    Executed at import time (ImportExecutor thread), NOT inside the event
+    loop, so the blocking open() is not flagged by HA's blocking-call
+    detector (which aborts async_setup_entry on Python 3.14 / HA 2026.9+).
+    """
+    try:
+        component_path = _os.path.dirname(__file__)
+        with open(_os.path.join(component_path, "manifest.json"), encoding="utf-8") as f:
+            return _json.load(f).get("version", "unknown")
+    except Exception:  # noqa: BLE001
+        return "unknown"
+
+
+_INSTALLED_VERSION = _read_manifest_version()
+
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     return True
@@ -40,17 +61,10 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     timer_storage = GlobalTimerStorage(hass)
     await timer_storage.async_load()
 
-    # Read installed version from manifest
-    import json as _json
-    import os as _os
-    _component_path = _os.path.dirname(__file__)
-    with open(_os.path.join(_component_path, "manifest.json")) as _f:
-        _manifest = _json.load(_f)
-
     hass.data.setdefault(DOMAIN, {})
     hass.data[DOMAIN][DATA_STORAGE] = storage
     hass.data[DOMAIN][DATA_GLOBAL_TIMER_STORAGE] = timer_storage
-    hass.data[DOMAIN]["version"] = _manifest.get("version", "unknown")
+    hass.data[DOMAIN]["version"] = _INSTALLED_VERSION
 
     entry.async_on_unload(entry.add_update_listener(_update_listener))
 
