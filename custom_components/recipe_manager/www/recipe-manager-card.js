@@ -1489,7 +1489,7 @@ import{c as e,i as t,b as i,m as r,s as a,a as n,A as s,E as o}from"./chunks/run
     .chips-area { display: flex; flex-direction: column; gap: 5px; }
     .chip-group-row { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
     .chip-label {
-      background: var(--rm-bg); border: 1px solid var(--rm-border);
+      background: var(--rm-bg-main); border: 1px solid var(--rm-border);
       color: var(--rm-text-secondary); font-weight: 600; cursor: default;
     }
 
@@ -1498,7 +1498,7 @@ import{c as e,i as t,b as i,m as r,s as a,a as n,A as s,E as o}from"./chunks/run
       flex-shrink: 0;
       height: 180px;
       position: relative;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       overflow: hidden;
     }
     .hero.no-image { height: 80px; }
@@ -2528,7 +2528,7 @@ import{c as e,i as t,b as i,m as r,s as a,a as n,A as s,E as o}from"./chunks/run
     .list-picker-existing { display: flex; flex-wrap: wrap; gap: 5px; }
     .list-picker-new-row { display: flex; gap: 6px; }
     .list-picker-input {
-      flex: 1; background: var(--rm-bg-surface, var(--rm-bg)); border: 1px solid var(--rm-border);
+      flex: 1; background: var(--rm-bg-surface, var(--rm-bg-main)); border: 1px solid var(--rm-border);
       border-radius: 7px; color: var(--rm-text); padding: 5px 9px; font-size: 13px;
       font-family: inherit; min-width: 0;
     }
@@ -3003,7 +3003,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     .mode-toggle {
       display: flex;
       gap: 4px;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border-radius: 8px;
       padding: 3px;
     }
@@ -3046,7 +3046,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       gap: 8px;
       font-size: 13px;
       color: var(--rm-text-secondary, #8e8e93);
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border-radius: 8px;
       padding: 10px 12px;
     }
@@ -3054,7 +3054,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     .url-row { display: flex; gap: 8px; }
     .url-input {
       flex: 1;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 1px solid var(--rm-border, rgba(255,255,255,0.12));
       border-radius: 8px;
       color: var(--rm-text, #e5e5ea);
@@ -3082,7 +3082,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       color: var(--rm-text-secondary, #8e8e93);
     }
     .field input, .field textarea {
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 1px solid var(--rm-border, rgba(255,255,255,0.12));
       border-radius: 8px;
       color: var(--rm-text, #e5e5ea);
@@ -3164,7 +3164,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     .add-row { display: flex; gap: 8px; align-items: flex-end; }
     .add-row input, .add-row textarea {
       flex: 1;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 1px solid var(--rm-border, rgba(255,255,255,0.12));
       border-radius: 8px;
       color: var(--rm-text, #e5e5ea);
@@ -3177,7 +3177,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
 
     /* Buttons */
     .action-btn {
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 1px solid var(--rm-border, rgba(255,255,255,0.12));
       border-radius: 8px;
       color: var(--rm-text, #e5e5ea);
@@ -3201,7 +3201,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     .import-info {
       display: flex;
       gap: 12px;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border-radius: 10px;
       padding: 12px 14px;
       font-size: 13px;
@@ -3221,7 +3221,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       display: flex;
       align-items: center;
       gap: 10px;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 2px dashed var(--rm-border, rgba(255,255,255,0.15));
       border-radius: 10px;
       padding: 16px 14px;
@@ -3531,7 +3531,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     }
     .meal-cell {
       min-height: 48px;
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border-radius: 6px;
       padding: 3px;
       display: flex;
@@ -3685,7 +3685,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
     .picker-label { font-size: 13px; color: var(--rm-text-secondary, #8e8e93); }
     .servings-ctrl { display: flex; align-items: center; gap: 8px; }
     .scaler-btn {
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       border: 1px solid var(--rm-border, rgba(255,255,255,0.08));
       border-radius: 50%;
       width: 26px; height: 26px; cursor: pointer;
@@ -3730,7 +3730,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       border-bottom: 1px solid var(--rm-border, rgba(255,255,255,0.05));
       transition: background 0.12s;
     }
-    .picker-item:hover { background: var(--rm-surface, #2c2c2e); }
+    .picker-item:hover { background: var(--rm-bg-surface, #2c2c2e); }
     .picker-thumb {
       width: 44px;
       height: 44px;
@@ -3739,7 +3739,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       flex-shrink: 0;
     }
     .picker-placeholder {
-      background: var(--rm-surface, #2c2c2e);
+      background: var(--rm-bg-surface, #2c2c2e);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -5350,7 +5350,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       display: flex; gap: 4px; flex-wrap: wrap; justify-content: center;
     }
     .preset-arc-btn {
-      background: var(--rm-bg); border: 1px solid var(--rm-border);
+      background: var(--rm-bg-main); border: 1px solid var(--rm-border);
       border-radius: 10px; padding: 2px 6px; font-size: 10px;
       color: var(--rm-text-secondary); cursor: pointer; transition: all 0.15s;
     }
