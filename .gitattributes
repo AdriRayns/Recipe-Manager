@@ -1,0 +1,25 @@
+# The build (rollup) emits LF and upstream development happens on Linux.
+# Pinning LF prevents phantom "modified" entries for contributors who have
+# core.autocrlf=true (Windows), which otherwise flags every rebuilt artifact
+# as changed even though its bytes are identical.
+*.js    text eol=lf
+*.mjs   text eol=lf
+*.cjs   text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.py    text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.sh    text eol=lf
+
+# Binary assets - never touch line endings
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.woff  binary
+*.woff2 binary
