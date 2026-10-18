@@ -94,6 +94,7 @@ class RecipeSensor(SensorEntity):
         self._attr_name = (recipe.name or recipe.id)[:MAX_STATE_LEN]
         self._attr_native_value = (recipe.name or recipe.id)[:MAX_STATE_LEN]
         self._attr_extra_state_attributes = _recipe_attributes(recipe)
+        self._attr_entity_picture = recipe.image_url or None
 
     def update_from_recipe(self, recipe: Recipe) -> None:
         self._apply(recipe)
